@@ -12,6 +12,8 @@ import HotelIcon from "@mui/icons-material/Hotel";  // Updated icon import
 import LocalActivityIcon from "@mui/icons-material/LocalActivity";  // Updated icon import
 import EmojiObjectsIcon from "@mui/icons-material/EmojiObjects";  // Updated icon import
 import { makeStyles } from "@mui/styles";
+import backgroundImage from "../assets/images/newHotelPage.png";
+
 
 
 const Hero = () => {
@@ -100,8 +102,9 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     alignItems: "center",
     justifyContent: "center",
-    background: "linear-gradient(to right, #ff7e5f, #feb47b)",
-    color: theme.palette.common.white,
+    backgroundImage: `url(${backgroundImage})`,
+    backgroundSize: "cover",
+    color: theme.palette.common.orange,
     position: "relative",
     marginBottom: "20px",
   },
@@ -145,23 +148,26 @@ const useStyles = makeStyles((theme) => ({
   categoryIcon: {
     fontSize: "3rem",
     marginBottom: theme.spacing(1),
-    color: theme.palette.common.white,
+    color: theme.palette.common.orange,
   },
   categoryTitle: {
     fontFamily: "'Poppins', sans-serif",
     fontWeight: 600,
     marginBottom: theme.spacing(1),
-    color: theme.palette.common.white,
+    color: theme.palette.common.orange,
   },
   categoryText: {
     fontFamily: "'Poppins', sans-serif",
     fontWeight: 400,
-    color: theme.palette.common.white,
+    color: theme.palette.common.orange,
   },
   "@keyframes fadeIn": {
     "0%": { opacity: 0 },
     "100%": { opacity: 1 },
   },
+
+
+  
 }));
 
 export default Hero;

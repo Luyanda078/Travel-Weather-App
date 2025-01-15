@@ -8,15 +8,14 @@ import {
   IconButton,
   TextField,
   useMediaQuery,
-} from "@mui/material";  // Updated import for MUI v5
+} from "@mui/material";
 import PlaceDetails from "./PlaceDetails";
-import RestaurantIcon from "@mui/icons-material/Restaurant";  // Updated icon import
-import HotelIcon from "@mui/icons-material/Hotel";  // Updated icon import
-import AttractionsIcon from "@mui/icons-material/LocalActivity";  // Updated icon import
-import GridOnIcon from "@mui/icons-material/GridOn";  // Updated icon import
-import ListIcon from "@mui/icons-material/List";  // Updated icon import
+import RestaurantIcon from "@mui/icons-material/Restaurant";
+import HotelIcon from "@mui/icons-material/Hotel";
+import AttractionsIcon from "@mui/icons-material/LocalActivity";
+import GridOnIcon from "@mui/icons-material/GridOn";
+import ListIcon from "@mui/icons-material/List";
 import { makeStyles } from "@mui/styles";
-
 
 const List = ({
   places,
@@ -92,25 +91,24 @@ const List = ({
               <MenuItem value={4}>Above 4.0 ★</MenuItem>
               <MenuItem value={4.5}>Above 4.5 ★</MenuItem>
             </TextField>
-            {!isMobile &&(
+            {!isMobile && (
               <Box className={classes.iconsContainer}>
-              <IconButton onClick={() => handleLayoutChange("grid")}>
-                <GridOnIcon
-                  className={
-                    layout === "grid" ? classes.activeIcon : classes.icon
-                  }
-                />
-              </IconButton>
-              <IconButton onClick={() => handleLayoutChange("list")}>
-                <ListIcon
-                  className={
-                    layout === "list" ? classes.activeIcon : classes.icon
-                  }
-                />
-              </IconButton>
-            </Box>
+                <IconButton onClick={() => handleLayoutChange("grid")}>
+                  <GridOnIcon
+                    className={
+                      layout === "grid" ? classes.activeIcon : classes.icon
+                    }
+                  />
+                </IconButton>
+                <IconButton onClick={() => handleLayoutChange("list")}>
+                  <ListIcon
+                    className={
+                      layout === "list" ? classes.activeIcon : classes.icon
+                    }
+                  />
+                </IconButton>
+              </Box>
             )}
-            
           </form>
           <Grid container spacing={3} className={classes.list}>
             {places?.map((place, i) => (
@@ -173,15 +171,8 @@ const useStyles = makeStyles((theme) => ({
   },
   select: {
     padding: theme.spacing(1.5, 2),
-    color: theme.palette.text.primary,
     "&:focus": {
       backgroundColor: "transparent",
-    },
-    "& .MuiOutlinedInput-input": {
-      padding: theme.spacing(1.5, 2),
-    },
-    "& .MuiSelect-icon": {
-      color: theme.palette.text.primary,
     },
   },
   icon: {
@@ -189,7 +180,6 @@ const useStyles = makeStyles((theme) => ({
     color: theme.palette.text.primary,
   },
   activeIcon: {
-    marginRight: theme.spacing(1),
     color: "#ff7e5f",
   },
   iconsContainer: {
@@ -223,10 +213,6 @@ const useStyles = makeStyles((theme) => ({
     },
     "&::-webkit-scrollbar-thumb": {
       backgroundColor: "#ff7e5f",
-      borderRadius: "4px",
-    },
-    "&::-webkit-scrollbar-track": {
-      backgroundColor: theme.palette.background.paper,
       borderRadius: "4px",
     },
   },
